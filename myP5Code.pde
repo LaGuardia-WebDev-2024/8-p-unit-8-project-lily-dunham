@@ -14,6 +14,7 @@ draw = function(){
 
 //🟢mouseClicked Function - will run when mouse is clicked
 mouseClicked = function(){
+  horseSize
 
 }
 
@@ -24,6 +25,12 @@ var drawFish = function(fishX, fishY, fishColor){
   text("🐎", fishX, fishY);
 };
 
+//🟡drawCloud Function - will run when called
+var drawCloud = function(cloudX, cloudY, cloudColor){
+  textSize(50);
+  fill(cloudColor);
+  text("🐎", cloudX, cloudY);
+};
 
 
 
