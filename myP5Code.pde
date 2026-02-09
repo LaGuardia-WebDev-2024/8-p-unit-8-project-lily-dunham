@@ -1,35 +1,41 @@
-//🟢setup Function - will run once
+//setup Function
+var horseSize = 50;
+var cloudSize = 100;
 setup = function() {
     size(600, 400);
     background(255,255,255,0);
     
-    drawFish(100, 250, color(200,0,200)); 
-    drawFish(190,250, color(0,200,200));
+    drawHorse(100, 250, color(200,0,200)); 
+    drawHorse(190,250, color(0,200,200));
+    drawCloud(300, 100, cloudSize);
 };
 
-//🟢draw Function - will run on repeat
+//draw Function
 draw = function(){
 
 };
 
-//🟢mouseClicked Function - will run when mouse is clicked
+//mouseClicked Function
 mouseClicked = function(){
-  horseSize
-
+  horseSize += 10;
+  cloudSize -= 5;
+  background(255,255,255,0);
+  drawHorse(100, 250, color(200,0,200), horseSize); 
+  drawHorse(190,250, color(0,200,200), horseSize);
+  drawCloud(300, 100, cloudSize);
 }
 
-//🟡drawFish Function - will run when called
-var drawFish = function(fishX, fishY, fishColor){
-  textSize(50);
-  fill(fishColor);
-  text("🐎", fishX, fishY);
+//drawHorse Function - draws a horse emoji
+var drawHorse = function(x, y, horseColor, size){
+  textSize(size);
+  fill(horseColor);
+  text("🐎", x, y);
 };
 
-//🟡drawCloud Function - will run when called
-var drawCloud = function(cloudX, cloudY, cloudColor){
-  textSize(50);
-  fill(cloudColor);
-  text("🐎", cloudX, cloudY);
+//drawCloud Function - draws a cloud
+var drawCloud = function(x, y, size){
+  textSize(size);
+  text("☁️", x, y);
 };
 
 
